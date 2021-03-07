@@ -44,9 +44,7 @@ G. Rozpoznawanie języka migowego
 #### Technologie
 
 - Flask
-- Django
 - FastAPI
-- Pyramid
 
 ### Usługa rozpoznająca obrazy
 
