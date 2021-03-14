@@ -1,0 +1,4 @@
+include: '/backend/.gitlab-ci.yml'
+
+# You can include your folders if you want to run any jobs for your stuff
+
