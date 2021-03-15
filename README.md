@@ -2,13 +2,13 @@
 
 ## Terminy
 
-- [x] 1.03: 4 grupy
-- [x] 8.03: temat, zakres tematyczny
+- [x] 01.03: 4 grupy
+- [x] 08.03: temat, zakres tematyczny
 - [x] 15.03: specyfikacja (funkcjonalność,  kamienie milowe)
 - [ ] 29.03: Uzupełnienie wiedzy
 - [ ] 19.04- I kamień milowy
 - [ ] 17.05 – II kamień milowy
-- [ ] 7.06 – III kamień milowy
+- [ ] 07.06 – III kamień milowy
 - [ ] 14.06 – prezentacja rezultatów projektu, uwagi do kodu
 - [ ] 21.06 – uzupełnienia dokumentacji i kodu
 
