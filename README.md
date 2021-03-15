@@ -3,8 +3,8 @@
 ## Terminy
 
 - [x] 1.03: 4 grupy
-- [ ] 8.03: temat, zakres tematyczny
-- [ ] 15.03: specyfikacja (funkcjonalność,  kamienie milowe)
+- [x] 8.03: temat, zakres tematyczny
+- [x] 15.03: specyfikacja (funkcjonalność,  kamienie milowe)
 - [ ] 29.03: Uzupełnienie wiedzy
 - [ ] 19.04- I kamień milowy
 - [ ] 17.05 – II kamień milowy
@@ -24,11 +24,11 @@ G. Rozpoznawanie języka migowego
 
 ## Specyfikacja (funkcjonalność, kamienie milowe)
 
-### Aplikacje frontendowa
+### Aplikacje webowa (frontendowa)
 
-- Robienie requestów na serwer
-- Wyświetlanie wyników
 - Obsługa kamery
+- Wysyłanie wykonanych zdjęć do usługi rozpoznającej zdjęcia
+- Wyświetlanie wyników (rozpoznane znaki)
 
 #### Technologie
 
@@ -36,21 +36,19 @@ G. Rozpoznawanie języka migowego
 
 ### Serwer backendowy
 
-- Przyjmowanie obrazów
-- Uruchomienie usługi rozpoznającej obrazy
-- Zwrócenie wyniku
-- REST API
+- Przyjmowanie obrazów (z aplikacji webowej)
+- Usługi rozpoznającej obrazy
+- Zwrócenie wyniku rozpoznawania
+- Komunikacja za pomocą REST API
 
 #### Technologie
 
-- Flask
 - FastAPI
 
 ### Usługa rozpoznająca obrazy
 
 - Przyjmuje obraz
-- Zwraca znak
-
+- Zwraca rozpoznany znak
 
 #### Technologie
 
@@ -81,7 +79,10 @@ G. Rozpoznawanie języka migowego
 
 #### Trzeci
 
-- Usprawnienie dokładności rozpoznawania znaków (jak tylko się da)
+- Usprawnienie dokładności rozpoznawania znaków
+    - Rozszerzenie datasetu
+    - Przetestowanie metod wstępnej filtracji obrazu (OpenCV)
+    - Przetestowanie różnych modeli rozpoznających obrazy
 
 - Responsywna strona internetowa aplikacji
 
