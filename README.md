@@ -80,6 +80,7 @@ G. Rozpoznawanie języka migowego
 #### Trzeci
 
 - Usprawnienie dokładności rozpoznawania znaków
+
     - Rozszerzenie datasetu
     - Przetestowanie metod wstępnej filtracji obrazu (OpenCV)
     - Przetestowanie różnych modeli rozpoznających obrazy
