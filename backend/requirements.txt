@@ -14,3 +14,6 @@ uvicorn==0.13.4
 uvloop==0.15.2
 watchgod==0.7
 websockets==8.1
+tensorflow==2.5.0
+numpy==1.19.2
+Pillow~=8.2.0
