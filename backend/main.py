@@ -12,12 +12,28 @@ from pydantic import BaseModel
 from typing import List
 from fastapi import FastAPI, File, UploadFile, HTTPException
 from tensorflow import keras
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
 filepath = '/home/pjoter/ziwg-projekt/ml/save_at_50.h5'
 model = keras.models.load_model(filepath, compile=True)
 image_size = (180, 180)
+
+
+origins = [
+    "http://localhost:3000",
+    "localhost:3000"
+]
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"]
+)
 
 SIGNS = ["1", "2", "3", "4", "5", "A", "B", "C", "D", "E", "F", "G", "H", "I", "K", "L", "M", "N", "O", "P", "R", "S",
          "T", "U", "W", "Y", "Z"]
