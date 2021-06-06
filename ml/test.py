@@ -11,7 +11,7 @@ image_size = (180, 180)
 if __name__ == "__main__":
     model = keras.models.load_model("save_at_50.h5")
     img = keras.preprocessing.image.load_img(
-        "Test/B/B_P_hgr1_id01_1.jpg", target_size=image_size
+        "/home/pjoter/Downloads/image.png", target_size=image_size
     )
     img_array = keras.preprocessing.image.img_to_array(img)
     img_array = tf.expand_dims(img_array, 0)  # Create batch axis

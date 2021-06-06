@@ -20,12 +20,10 @@ filepath = '/home/pjoter/ziwg-projekt/ml/save_at_50.h5'
 model = keras.models.load_model(filepath, compile=True)
 image_size = (180, 180)
 
-
 origins = [
     "http://localhost:3000",
     "localhost:3000"
 ]
-
 
 app.add_middleware(
     CORSMiddleware,
@@ -48,21 +46,21 @@ def predict(image: Image.Image):
 
 
 @app.post("/recognize/")
-async def upload_photo_to_recognize(file: UploadFile = File(...)):
-    if file.content_type.startswith('image/') is False:
-        raise HTTPException(status_code=400, detail=f'File \'{file.filename}\' is not an image.')
+async def upload_photo_to_recognize(picture: UploadFile = File(...)):
+    if picture.content_type.startswith('image/') is False:
+        raise HTTPException(status_code=400, detail=f'File \'{picture.filename}\' is not an image.')
 
     try:
         # Read image contents
-        contents = await file.read()
+        contents = await picture.read()
         image = Image.open(io.BytesIO(contents))
         predictions = predict(image)
         # Generate prediction
-        print(predictions)
-        best = np.argmax(predictions)
-        print(best)
-        p = predictions[0][best]
-        return {"First sign": SIGNS[best]}
+        L = np.argsort(-predictions, axis=1)
+        best = int(L[:, 0])
+        second = int(L[:, 1])
+        return {"firstSign": SIGNS[best], "firstProbability": float(predictions[0][best]),
+                "secondSign": SIGNS[second], "secondProbability": float(predictions[0][second])}
 
     except:
         e = sys.exc_info()[1]
