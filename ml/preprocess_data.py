@@ -103,14 +103,14 @@ if __name__ == "__main__":
     image_size = (180, 180)
     model = make_model(input_shape=image_size + (3,), num_classes=27)
     model.summary()
-    keras.utils.plot_model(model, show_shapes=True)
     train_ds = train_ds.prefetch(buffer_size=32)
     val_ds = val_ds.prefetch(buffer_size=32)
-    epochs = 50
+    epochs = 100
+
     y_train = np.asarray(labels)
     y_test = np.asarray(labels)
     callbacks = [
-        keras.callbacks.ModelCheckpoint("save_at_{epoch}.h5"),
+        keras.callbacks.ModelCheckpoint("New_model_at_{epoch}.h5"),
     ]
     model.compile(
         optimizer=keras.optimizers.Adam(1e-3),
@@ -120,4 +120,3 @@ if __name__ == "__main__":
     model.fit(
         train_ds, epochs=epochs, callbacks=callbacks, validation_data=val_ds,
     )
-    model.save("./model.h5")
